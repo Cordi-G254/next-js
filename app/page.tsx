@@ -1,58 +1,38 @@
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg p-8">
-        <h1 className="text-3xl font-bold text-center mb-6">
-          Welcome Back
-        </h1>
+    <main
+      className="min-h-screen bg-cover bg-center relative"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1920&q=80')",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60" />
 
-        <form className="space-y-4">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium mb-2"
-            >
-              Email
-            </label>
+      {/* Content */}
+      <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
+        <div className="max-w-3xl text-center text-white">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-wide">
+            Elegant Spaces
+          </h1>
 
-            <input
-              id="email"
-              type="email"
-              placeholder="Enter your email"
-              className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+          <p className="mt-6 text-lg md:text-2xl text-gray-200">
+            Transforming interiors into timeless, functional, and beautiful
+            spaces. From modern living rooms to luxurious commercial designs,
+            we bring your vision to life.
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <button className="rounded-lg bg-amber-500 px-8 py-4 text-lg font-semibold text-white transition hover:bg-amber-600">
+              Explore Designs
+            </button>
+
+            <button className="rounded-lg border border-white px-8 py-4 text-lg font-semibold text-white transition hover:bg-white hover:text-black">
+              Contact Us
+            </button>
           </div>
-
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium mb-2"
-            >
-              Password
-            </label>
-
-            <input
-              id="password"
-              type="password"
-              placeholder="Enter your password"
-              className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white rounded-lg p-3 hover:bg-blue-700 transition"
-          >
-            Login
-          </button>
-        </form>
-
-        <p className="text-center text-gray-500 mt-6">
-          Don't have an account?{" "}
-          <a href="#" className="text-blue-600 hover:underline">
-            Sign Up
-          </a>
-        </p>
+        </div>
       </div>
     </main>
   );
