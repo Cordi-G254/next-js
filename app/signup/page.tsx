@@ -112,6 +112,11 @@ export default function SignupPage() {
               </button>
 
             </form>
+            <div className="mobile-home-link">
+              <Link href="/about" className="home-btn mobile-home-btn">
+                Explore Website
+              </Link>
+            </div>
 
             <div className="auth-links">
 

@@ -138,6 +138,12 @@ export default function LoginPage() {
                 </p>
             </div>
 
+            <div className="mobile-home-link">
+              <Link href="/about" className="home-btn mobile-home-btn">
+                Explore Website
+              </Link>
+            </div>
+
             <p className="mt-8 text-center text-gray-500">
               ←{" "}
               <Link
