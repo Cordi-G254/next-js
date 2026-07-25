@@ -1,0 +1,235 @@
+/* ===========================
+   ABOUT PAGE
+=========================== */
+
+.about-page{
+    background:#F5F5F5;
+    color:#333;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.about-hero{
+    position:relative;
+    height:100vh;
+    background-image:url("/images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.about-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.65);
+}
+
+.about-hero-content{
+    position:relative;
+    z-index:2;
+    color:white;
+    max-width:800px;
+    padding:20px;
+}
+
+.about-hero-content h1{
+    font-size:4rem;
+    margin-bottom:25px;
+}
+
+.about-hero-content p{
+    font-size:1.3rem;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:15px 40px;
+    background:#C9A227;
+    color:white;
+    border-radius:50px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:#B08B1F;
+}
+
+/* ===========================
+   INTRO
+=========================== */
+
+.intro-section{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.intro-section h2{
+    font-size:3rem;
+    color:#1F1F1F;
+    margin-bottom:25px;
+}
+
+.intro-section p{
+    font-size:1.2rem;
+    color:#666;
+    line-height:1.9;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.content-section{
+    max-width:1300px;
+    margin:0 auto 120px;
+    padding:0 40px;
+    display:flex;
+    align-items:center;
+    gap:70px;
+}
+
+.reverse{
+    flex-direction:row-reverse;
+}
+
+.content-image{
+    flex:1;
+}
+
+.content-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.content-image img:hover{
+    transform:scale(1.03);
+}
+
+.content-text{
+    flex:1;
+}
+
+.content-text h2{
+    font-size:2.5rem;
+    color:#C9A227;
+    margin-bottom:20px;
+}
+
+.content-text p{
+    line-height:2;
+    color:#555;
+    font-size:18px;
+}
+
+.content-text ul{
+    margin-top:25px;
+}
+
+.content-text li{
+    margin:14px 0;
+    list-style:none;
+    font-size:18px;
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.cta-section{
+    background:#1F1F1F;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.cta-section h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta-section p{
+    color:#ddd;
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+    text-decoration:none;
+    padding:16px 40px;
+    border-radius:50px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.primary-btn{
+    background:#C9A227;
+    color:white;
+}
+
+.primary-btn:hover{
+    background:#B08B1F;
+}
+
+.secondary-btn{
+    border:2px solid white;
+    color:white;
+}
+
+.secondary-btn:hover{
+    background:white;
+    color:#1F1F1F;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.about-hero-content h1{
+    font-size:2.8rem;
+}
+
+.content-section{
+    flex-direction:column;
+    text-align:center;
+    padding:0 20px;
+}
+
+.reverse{
+    flex-direction:column;
+}
+
+.intro-section h2{
+    font-size:2.2rem;
+}
+
+.content-text h2{
+    font-size:2rem;
+}
+
+.cta-section h2{
+    font-size:2.2rem;
+}
+
+}

@@ -1,6 +1,8 @@
 "use client";
+
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
@@ -14,73 +16,93 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Navigation */}
-      <header className="absolute top-0 left-0 z-30 w-full">
-        <nav className="mx-auto mt-4 flex max-w-7xl items-center justify-between rounded-full bg-white/10 px-8 py-4 backdrop-blur-md shadow-lg">
+      <header className="absolute top-0 left-0 z-30 w-full px-4 py-4">
 
+        <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/20 bg-black/20 px-6 py-4 backdrop-blur-xl">
+      
           {/* Logo */}
-          <h1 className="text-2xl font-bold tracking-wider text-white">
+          <h1 className="text-xl font-bold tracking-widest text-white md:text-2xl">
             Elegant Spaces
           </h1>
-
-      {/* Desktop Menu */}
-      <ul className="hidden md:flex gap-10 text-white">
-        <li className="cursor-pointer hover:text-amber-400 transition">
-          Home
-        </li>
-        <li className="cursor-pointer hover:text-amber-400 transition">
-          Portfolio
-        </li>
-        <li className="cursor-pointer hover:text-amber-400 transition">
-          Services
-        </li>
-        <li className="cursor-pointer hover:text-amber-400 transition">
-          About
-        </li>
-        <li className="cursor-pointer hover:text-amber-400 transition">
-          Contact
-        </li>
-      </ul>
-  
-      {/* Mobile Hamburger */}
-      <button
-        onClick={() => setMenuOpen(!menuOpen)}
-        className="md:hidden text-white"
-      >
-        {menuOpen ? <X size={32} /> : <Menu size={32} />}
-      </button>
-    </nav>
-
-    {/* Mobile Menu */}
-    {menuOpen && (
-      <div className="mx-4 mt-3 rounded-3xl bg-black/70 backdrop-blur-lg p-6 md:hidden">
-  
-        <ul className="space-y-5 text-center text-white text-lg">
-  
-          <li className="cursor-pointer hover:text-amber-400 transition">
-            Home
-          </li>
-  
-          <li className="cursor-pointer hover:text-amber-400 transition">
-            Portfolio
-          </li>
-  
-          <li className="cursor-pointer hover:text-amber-400 transition">
-            Services
-          </li>
-  
-          <li className="cursor-pointer hover:text-amber-400 transition">
-            About
-          </li>
-  
-          <li className="cursor-pointer hover:text-amber-400 transition">
-            Contact
-          </li>
-  
-        </ul>
-  
-      </div>
-    )}
-  </header>
+      
+          {/* Desktop Menu */}
+          <ul className="hidden items-center gap-10 text-white md:flex">
+            <Link
+              href="/login"
+              className="rounded-full border border-white px-5 py-2 transition hover:bg-white hover:text-black"
+            >
+              Login
+            </Link>
+            <li className="cursor-pointer transition hover:text-amber-400">
+              Home
+            </li>
+            <li className="cursor-pointer transition hover:text-amber-400">
+              Portfolio
+            </li>
+            <li className="cursor-pointer transition hover:text-amber-400">
+              Services
+            </li>
+            <li className="cursor-pointer transition hover:text-amber-400">
+              About
+            </li>
+            <li className="cursor-pointer transition hover:text-amber-400">
+              Contact
+            </li>
+          </ul>
+      
+          {/* Mobile Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="rounded-full p-2 text-white transition hover:bg-white/10 md:hidden"
+          >
+            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+      
+        </nav>
+      
+        {/* Mobile Menu */}
+        <div
+          className={`overflow-hidden transition-all duration-300 md:hidden ${
+            menuOpen ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="rounded-3xl border border-white/20 bg-black/40 p-6 backdrop-blur-xl">
+      
+            <ul className="space-y-6 text-center text-lg text-white">
+              <li>
+                <Link
+                  href="/login"
+                  className="block rounded-full border border-white py-3 text-center hover:bg-white hover:text-black transition"
+                >
+                  Login
+                </Link>
+              </li>
+              <li className="cursor-pointer hover:text-amber-400">
+                Home
+              </li>
+      
+              <li className="cursor-pointer hover:text-amber-400">
+                Portfolio
+              </li>
+      
+              <li className="cursor-pointer hover:text-amber-400">
+                Services
+              </li>
+      
+              <li className="cursor-pointer hover:text-amber-400">
+                About
+              </li>
+      
+              <li className="cursor-pointer hover:text-amber-400">
+                Contact
+              </li>
+      
+            </ul>
+      
+          </div>
+        </div>
+      
+      </header>
 
      {/* Hero Section */}
      <section className="relative z-10 flex min-h-screen items-center justify-center px-6">
