@@ -1,4 +1,8 @@
+"use client";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main
       className="relative min-h-screen bg-cover bg-center"
@@ -10,31 +14,73 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Navigation */}
-      <header className="absolute top-0 left-0 w-full z-20">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-8 py-6">
-          <h1 className="text-3xl font-extrabold tracking-wider text-white">
+      <header className="absolute top-0 left-0 z-30 w-full">
+        <nav className="mx-auto mt-4 flex max-w-7xl items-center justify-between rounded-full bg-white/10 px-8 py-4 backdrop-blur-md shadow-lg">
+
+          {/* Logo */}
+          <h1 className="text-2xl font-bold tracking-wider text-white">
             Elegant Spaces
           </h1>
 
-          <ul className="hidden md:flex gap-10 text-white text-lg">
-            <li className="cursor-pointer hover:text-amber-400 transition">
-              Home
-            </li>
-            <li className="cursor-pointer hover:text-amber-400 transition">
-              Portfolio
-            </li>
-            <li className="cursor-pointer hover:text-amber-400 transition">
-              Services
-            </li>
-            <li className="cursor-pointer hover:text-amber-400 transition">
-              About
-            </li>
-            <li className="cursor-pointer hover:text-amber-400 transition">
-              Contact
-            </li>
-          </ul>
-        </nav>
-      </header>
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex gap-10 text-white">
+        <li className="cursor-pointer hover:text-amber-400 transition">
+          Home
+        </li>
+        <li className="cursor-pointer hover:text-amber-400 transition">
+          Portfolio
+        </li>
+        <li className="cursor-pointer hover:text-amber-400 transition">
+          Services
+        </li>
+        <li className="cursor-pointer hover:text-amber-400 transition">
+          About
+        </li>
+        <li className="cursor-pointer hover:text-amber-400 transition">
+          Contact
+        </li>
+      </ul>
+  
+      {/* Mobile Hamburger */}
+      <button
+        onClick={() => setMenuOpen(!menuOpen)}
+        className="md:hidden text-white"
+      >
+        {menuOpen ? <X size={32} /> : <Menu size={32} />}
+      </button>
+    </nav>
+
+    {/* Mobile Menu */}
+    {menuOpen && (
+      <div className="mx-4 mt-3 rounded-3xl bg-black/70 backdrop-blur-lg p-6 md:hidden">
+  
+        <ul className="space-y-5 text-center text-white text-lg">
+  
+          <li className="cursor-pointer hover:text-amber-400 transition">
+            Home
+          </li>
+  
+          <li className="cursor-pointer hover:text-amber-400 transition">
+            Portfolio
+          </li>
+  
+          <li className="cursor-pointer hover:text-amber-400 transition">
+            Services
+          </li>
+  
+          <li className="cursor-pointer hover:text-amber-400 transition">
+            About
+          </li>
+  
+          <li className="cursor-pointer hover:text-amber-400 transition">
+            Contact
+          </li>
+  
+        </ul>
+  
+      </div>
+    )}
+  </header>
 
      {/* Hero Section */}
      <section className="relative z-10 flex min-h-screen items-center justify-center px-6">
